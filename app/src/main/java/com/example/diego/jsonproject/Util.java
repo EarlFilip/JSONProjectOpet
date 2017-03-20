@@ -108,4 +108,20 @@ public class Util {
         }
         return novoAlbum;
     }
+
+    public static Previsao JSONtoPrevisao(String jsonString){
+        try {
+            Previsao previsao = new Previsao();
+            JSONObject mainObj = new JSONObject(jsonString);
+            previsao.setCidade(mainObj.getJSONObject("city").getString("name"));
+            JSONArray listaTempo = mainObj.getJSONArray("list");
+            Double temp= listaTempo.getJSONObject(0).getJSONObject("temp").getDouble("day");
+            previsao.setTemperatura(temp);
+
+            return previsao;
+        }catch (Exception e){
+            Log.e("ERROR","Error",e);
+        }
+        return null;
+    }
 }
