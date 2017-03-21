@@ -62,7 +62,7 @@ public class JSONActivity extends Activity {
                 String data= "Cidade: "+ previsao.getCidade()+ "\n";
                 data += "Temperatura: "+ previsao.getTemperatura();
 
-                textJSON.setText(s);
+                textJSON.setText(data);
             }
         }
     }
