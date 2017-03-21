@@ -57,7 +57,13 @@ public class JSONActivity extends Activity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            textJSON.setText(s);
+            Previsao previsao= Util.JSONtoPrevisao(s);
+            if(previsao != null){
+                String data= "Cidade: "+ previsao.getCidade()+ "\n";
+                data += "Temperatura: "+ previsao.getTemperatura();
+
+                textJSON.setText(s);
+            }
         }
     }
 }
