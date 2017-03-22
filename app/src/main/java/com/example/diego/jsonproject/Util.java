@@ -123,6 +123,5 @@ public class Util {
             Log.e("ERROR","Error",e);
             return null;
         }
-
     }
 }
